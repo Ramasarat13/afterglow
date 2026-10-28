@@ -48,6 +48,19 @@
     $('#treatments').scrollIntoView({ behavior: 'smooth' });
   }));
 
+  // Hero copy: dissolve in once the background image has loaded
+  const heroEl = $('.hero');
+  const showHero = () => heroEl.classList.add('is-loaded');
+  const bg = (getComputedStyle(heroEl).backgroundImage.match(/url\(["']?([^"')]+)["']?\)/) || [])[1];
+  if (bg) {
+    const img = new Image();
+    img.onload = img.onerror = showHero;
+    img.src = bg;
+    setTimeout(showHero, 4000); // don't hold the copy back on a slow connection
+  } else {
+    showHero();
+  }
+
   // Header: transparent over the hero, solid once the hero has been scrolled past
   const hero = $('.hero');
   const syncHeader = () => {
@@ -89,7 +102,7 @@
   }));
 
   // Reveal each section as it scrolls into view
-  const sections = $$('main > section, main > .usp, .site-footer');
+  const sections = $$('main > section:not(.hero), main > .usp, .site-footer');
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!('IntersectionObserver' in window) || reduce) return;
   const io = new IntersectionObserver((entries) => {
