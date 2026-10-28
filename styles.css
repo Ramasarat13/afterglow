@@ -173,7 +173,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .symptom:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
 .symptom__icon { display: grid; place-items: center; flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px; background: color-mix(in srgb, var(--c) 8%, transparent); color: var(--c); font-size: 20px; }
 .symptom__text { flex: 1; min-width: 0; }
-.symptom__text strong { display: block; font-size: 15px; font-weight: 700; line-height: 1.25; color: var(--Primary-Deep-Pine); }
+.symptom__text strong { display: block; font-size: 15px; font-weight: 700; line-height: 1.25; color: var(--UI-Black); }
 .symptom__text span { display: block; margin-top: 4px; font-size: 12px; line-height: 1.375; color: #6b7280; }
 .symptom__go { margin-top: 4px; font-size: 16px; color: #9b2226; }
 /* Small screens: three cards, the rest open and close with "View all" */
@@ -181,7 +181,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .symptoms__grid { gap: 0; }
   .symptoms__grid li { display: grid; grid-template-rows: 1fr; margin-top: 16px; }
   .symptoms__grid li:first-child { margin-top: 0; }
-  .symptoms__grid li > .symptom { min-height: 149px; }
+  .symptoms__grid li > .symptom { min-height: 0; }
   .symptoms__grid li:nth-child(n + 4) {
     overflow: clip; overflow-clip-margin: 8px;
     grid-template-rows: 0fr; margin-top: 0; opacity: 0; visibility: hidden; transform: translateY(-8px);
@@ -197,7 +197,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
     transition: padding-block 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), border-block-width 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), min-height 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.2s ease, box-shadow 0.2s ease;
   }
   .symptoms__grid.is-expanded li:nth-child(n + 4) > .symptom {
-    padding-block: 20px; border-block-width: 1px; min-height: 149px;
+    padding-block: 20px; border-block-width: 1px;
     transition-delay: calc((var(--n, 0) - 4) * 50ms), calc((var(--n, 0) - 4) * 50ms), calc((var(--n, 0) - 4) * 50ms), 0s, 0s;
   }
   .symptoms__grid li:nth-child(4) { --n: 4; } .symptoms__grid li:nth-child(5) { --n: 5; } .symptoms__grid li:nth-child(6) { --n: 6; }
@@ -230,9 +230,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .treatments__head .eyebrow { margin-bottom: 4px; }
 .treatments__head h2 { font-size: 36px; font-weight: 700; line-height: 1.11; letter-spacing: -0.9px; }
 .treatments__sub { margin-top: 4px; font-weight: 600; letter-spacing: 0.4px; color: #4a5568; }
-.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 4px; margin-bottom: 16px; }
+.chips { display: flex; flex-wrap: nowrap; justify-content: flex-start; gap: 10px; padding: 8px 4px 12px; margin: 0 -16px 8px; padding-inline: 16px; overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-inline: 16px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.chips::-webkit-scrollbar { display: none; }
+.chips li { flex: 0 0 auto; scroll-snap-align: start; }
 .chip {
-  display: flex; align-items: center; gap: 6px; padding: 10px 16px;
+  white-space: nowrap; display: flex; align-items: center; gap: 6px; padding: 10px 16px;
   background: #fff; border: 1px solid #e5e7eb; border-radius: 6px;
   font-size: 14px; font-weight: 500; line-height: 1.43; color: #374151;
   transition: transform 0.2s ease, background-color 0.2s ease;
@@ -374,6 +376,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .different { padding: 80px 64px; gap: 72px; }
   .different h2 { font-size: 34px; line-height: 1.06; }
   .treatments { padding: 80px 16px; max-width: 1184px; }
+  .chips { flex-wrap: wrap; justify-content: center; overflow: visible; margin: 0 0 16px; padding: 4px; }
   .easy { padding: 48px 96px; }
   .easy h2 { font-size: 60px; line-height: 1; letter-spacing: -1.5px; }
   .easy__cards { grid-template-columns: repeat(3, 1fr); gap: 24px; }
