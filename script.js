@@ -50,6 +50,18 @@
 
   // Header: transparent over the hero, solid once the hero has been scrolled past
   const hero = $('.hero');
+  const heroVariable = window.matchMedia('(min-width: 768px)').matches ? '--hero-d' : '--hero-m';
+  const heroBackground = getComputedStyle(hero).getPropertyValue(heroVariable).match(/url\(["']?(.*?)["']?\)/)?.[1];
+  const revealHeroText = () => hero.classList.add('is-image-loaded');
+  if (!heroBackground) {
+    revealHeroText();
+  } else {
+    const heroImage = new Image();
+    heroImage.addEventListener('load', revealHeroText, { once: true });
+    heroImage.addEventListener('error', revealHeroText, { once: true });
+    heroImage.src = heroBackground;
+    if (heroImage.complete) revealHeroText();
+  }
   const syncHeader = () => {
     header.classList.toggle('is-scrolled', window.scrollY > hero.offsetHeight - header.offsetHeight);
   };
