@@ -79,6 +79,7 @@
     }
   });
   $$('.dropdown a').forEach((a) => a.addEventListener('click', (e) => {
+    if (a.getAttribute('href') !== '#treatments') return;
     e.preventDefault();
     setFilter(a.dataset.filter);
     tiles.forEach((o) => o.classList.toggle('is-active', o.dataset.tile === a.dataset.filter));
