@@ -1,0 +1,100 @@
+.weightloss-page { background: #fff; color: var(--Primary-Deep-Pine); font-family: var(--font-poppins); }
+.wl-header { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; min-height: 70px; padding: 10px clamp(20px, 5vw, 72px); background: rgba(255,255,255,.94); border-bottom: 1px solid #eee9df; backdrop-filter: blur(12px); }
+.wl-header img { width: 112px; height: auto; }
+.wl-header nav { display: flex; align-items: center; gap: clamp(12px, 2.2vw, 32px); font-size: 13px; font-weight: 600; }
+.wl-header nav a { padding: 8px 0; }
+.wl-header nav a:hover, .wl-header nav a.is-current { color: var(--Primary-Ember); }
+.wl-header__cta { padding: 10px 18px !important; background: var(--Primary-Ember); color: #fff !important; border-radius: 3px; }
+.wl-kicker { color: var(--Primary-Ember); font-size: 10px; font-weight: 700; letter-spacing: 2.2px; line-height: 1.4; text-transform: uppercase; }
+.wl-button { display: inline-flex; align-items: center; justify-content: center; padding: 12px 20px; background: var(--Primary-Ember); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; }
+.wl-button:hover { background: var(--Primary-Oxblood); }
+.wl-button--light { background: #fff; color: var(--Primary-Ember); }
+.wl-button--light:hover { background: var(--Primary-Halo); }
+.wl-hero { position: relative; display: grid; align-items: end; min-height: 620px; padding: 110px clamp(20px, 8vw, 120px) 0; overflow: hidden; background: linear-gradient(90deg, rgba(76,35,21,.72), rgba(76,35,21,.08)), url('assets/img/hero-desktop.png') center / cover; color: #fff; }
+.wl-hero__content { position: relative; z-index: 1; align-self: center; max-width: 430px; padding-bottom: 120px; }
+.wl-hero .wl-kicker { color: #fff; }
+.wl-hero h1 { margin: 12px 0 18px; font-size: clamp(42px, 6vw, 82px); font-weight: 600; line-height: .98; letter-spacing: 1px; text-transform: uppercase; }
+.wl-hero__content > p:not(.wl-kicker) { max-width: 340px; margin-bottom: 28px; color: #fff; font-size: 16px; line-height: 1.5; }
+.wl-hero__cards { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 760px; margin: 0 auto; transform: translateY(1px); }
+.wl-mini-card { display: grid; gap: 6px; padding: 10px; background: #fff; color: var(--Primary-Deep-Pine); box-shadow: 0 4px 12px #0002; font-size: 10px; }
+.wl-mini-card img { width: 100%; aspect-ratio: 1.2; object-fit: cover; background: #1d244d; }
+.wl-mini-card strong { color: var(--Primary-Ember); font-size: 11px; }
+.wl-mini-card span { color: #4a5568; }
+.wl-mini-card a { margin-top: 2px; padding: 6px; background: var(--Primary-Ember); color: #fff; text-align: center; text-transform: uppercase; }
+.wl-disclaimer { padding: 18px 24px; background: #f7f5ef; color: #6b7280; font-size: 10px; line-height: 1.5; text-align: center; }
+.wl-calculator { display: grid; grid-template-columns: 1fr 1.4fr .8fr; align-items: center; gap: 48px; max-width: 1180px; margin: 0 auto; padding: 86px 32px; }
+.wl-calculator h2, .wl-clinician h2, .wl-choice h2, .wl-faq h2, .wl-cta h2 { margin-top: 8px; font-size: clamp(28px, 3vw, 46px); font-weight: 600; line-height: 1.02; }
+.wl-calculator__meter label { display: block; margin-bottom: 14px; font-size: 11px; font-weight: 600; }
+.wl-calculator__meter input { width: 100%; accent-color: var(--Primary-Ember); }
+.wl-calculator__numbers { display: flex; justify-content: space-between; color: #6b7280; font-size: 11px; }
+.wl-calculator__numbers strong { color: var(--Primary-Deep-Pine); font-size: 16px; }
+.wl-calculator__result { display: grid; gap: 3px; text-align: center; }
+.wl-calculator__result strong { font-size: clamp(42px, 5vw, 68px); line-height: .9; }
+.wl-calculator__result span { font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.wl-calculator__result p { color: #6b7280; font-size: 11px; }
+.wl-clinician { display: grid; grid-template-columns: 1fr 1fr; min-height: 470px; background: var(--Primary-Ember); color: #fff; }
+.wl-clinician img { width: 100%; height: 100%; min-height: 470px; object-fit: cover; object-position: center; }
+.wl-clinician > div { display: flex; flex-direction: column; justify-content: center; gap: 18px; padding: 72px clamp(28px, 7vw, 110px); }
+.wl-clinician .wl-kicker { color: #fff; }
+.wl-clinician p:not(.wl-kicker) { max-width: 440px; color: #fff; line-height: 1.6; }
+.wl-prescription { max-width: 680px; margin: 0 auto; padding: 88px 24px; text-align: center; }
+.wl-prescription p:last-child { margin-top: 18px; color: #4a5568; line-height: 1.65; }
+.wl-choice { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 8vw; max-width: 1180px; margin: 0 auto; padding: 0 32px 96px; }
+.wl-choice img { width: 100%; height: 370px; object-fit: cover; object-position: center; }
+.wl-choice > div { display: grid; gap: 14px; max-width: 430px; }
+.wl-choice h2 { margin-top: 0; }
+.wl-choice p:not(.wl-kicker) { color: #4a5568; line-height: 1.6; }
+.wl-products { padding: 92px clamp(20px, 7vw, 96px); background: var(--Primary-Halo); text-align: center; }
+.wl-products > h2 { margin: 8px 0 34px; font-size: clamp(30px, 4vw, 52px); font-weight: 600; }
+.wl-product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; max-width: 1180px; margin: 0 auto; text-align: left; }
+.wl-product { display: flex; flex-direction: column; min-width: 0; padding: 12px; background: #fff; border: 1px solid #ece8df; }
+.wl-product img { width: 100%; aspect-ratio: 1.05; object-fit: cover; background: #1d244d; }
+.wl-product h3 { margin: 14px 0 4px; color: var(--Primary-Deep-Pine); font-size: 16px; }
+.wl-product p { min-height: 42px; color: #6b7280; font-size: 12px; line-height: 1.45; }
+.wl-product strong { margin-top: auto; padding-top: 16px; color: var(--Primary-Ember); font-size: 18px; }
+.wl-product strong span { color: #4a5568; font-size: 11px; }
+.wl-product a { margin-top: 12px; padding: 9px; border: 1px solid var(--Primary-Ember); color: var(--Primary-Ember); font-size: 10px; font-weight: 700; text-align: center; text-transform: uppercase; }
+.wl-testimonials { padding: 88px clamp(20px, 7vw, 96px); text-align: center; }
+.wl-testimonials__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1180px; margin: 28px auto 0; text-align: left; }
+.wl-testimonials blockquote { min-height: 170px; margin: 0; padding: 26px; background: #f4f0e8; color: #39413b; font-size: 15px; line-height: 1.6; }
+.wl-testimonials cite { display: block; margin-top: 22px; color: var(--Primary-Ember); font-size: 10px; font-style: normal; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.wl-cta { min-height: 420px; display: flex; align-items: center; padding: 70px clamp(24px, 9vw, 140px); background: linear-gradient(90deg, rgba(245,239,231,.9), rgba(245,239,231,.32)), url('assets/img/newsletter-background.jpg') center / cover; }
+.wl-cta > div { max-width: 410px; }
+.wl-cta h2 { margin-bottom: 24px; }
+.wl-faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8vw; max-width: 1100px; margin: 0 auto; padding: 88px 24px; }
+.wl-faq__list { border-top: 1px solid #d9d4c9; }
+.wl-faq details { border-bottom: 1px solid #d9d4c9; }
+.wl-faq summary { cursor: pointer; padding: 18px 0; font-size: 13px; font-weight: 700; list-style: none; }
+.wl-faq summary::-webkit-details-marker { display: none; }
+.wl-faq summary::after { float: right; content: '+'; color: var(--Primary-Ember); font-size: 20px; font-weight: 400; }
+.wl-faq details[open] summary::after { content: '−'; }
+.wl-faq details p { max-width: 580px; padding: 0 28px 18px 0; color: #6b7280; font-size: 13px; line-height: 1.55; }
+.wl-footer { display: grid; grid-template-columns: 1fr auto; gap: 40px; padding: 64px clamp(24px, 8vw, 120px) 24px; background: var(--Primary-Deep-Pine); color: #fff; }
+.wl-footer img { width: 130px; filter: brightness(0) invert(1); }
+.wl-footer p { max-width: 220px; margin-top: 14px; color: #d9d4c9; font-size: 12px; }
+.wl-footer nav { display: flex; flex-direction: column; gap: 12px; font-size: 12px; text-transform: uppercase; }
+.wl-footer small { grid-column: 1 / -1; padding-top: 22px; border-top: 1px solid #ffffff33; color: #d9d4c9; font-size: 10px; }
+@media (max-width: 800px) {
+  .wl-header { padding: 12px 18px; }
+  .wl-header nav a:not(.wl-header__cta) { display: none; }
+  .wl-header__cta { font-size: 11px; }
+  .wl-hero { min-height: 720px; grid-template-columns: 1fr; padding: 110px 24px 0; background-position: 62% center; }
+  .wl-hero__content { padding-bottom: 100px; }
+  .wl-hero__cards { gap: 8px; }
+  .wl-mini-card { font-size: 9px; padding: 7px; }
+  .wl-calculator, .wl-choice, .wl-faq { grid-template-columns: 1fr; gap: 28px; }
+  .wl-calculator { padding: 64px 24px; }
+  .wl-clinician { grid-template-columns: 1fr; }
+  .wl-clinician img { min-height: 300px; max-height: 380px; }
+  .wl-clinician > div { padding: 52px 24px; }
+  .wl-choice { padding: 0 24px 64px; }
+  .wl-choice img { height: 260px; }
+  .wl-products { padding: 64px 16px; }
+  .wl-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .wl-product { padding: 8px; }
+  .wl-product h3 { font-size: 13px; }
+  .wl-product p { font-size: 11px; }
+  .wl-testimonials__grid { grid-template-columns: 1fr; }
+  .wl-faq { padding: 64px 24px; }
+  .wl-footer { grid-template-columns: 1fr 1fr; padding: 52px 24px 22px; }
+}
